@@ -7,8 +7,6 @@
 #define FECHA_PAR 7
 #define FIM 8
 
-int simbolo_lido;
-
 void obtenha_simbolo(void);
 void erro(const char *mensagem);
 void expr(void);
