@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include "define.h"
 
-
-
+int simbolo_lido;
 
 int main(){
     obtenha_simbolo();
