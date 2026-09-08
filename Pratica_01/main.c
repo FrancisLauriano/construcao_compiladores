@@ -5,6 +5,7 @@
 int simbolo_lido;
 
 int main(){
+
     obtenha_simbolo();
     expr();
 

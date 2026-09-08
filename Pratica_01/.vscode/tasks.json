@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar C/C++",
+            "type": "process",
+            "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "$ext = \"${fileExtname}\"; $pasta = \"${fileDirname}\"; $output = Join-Path $pasta \"output\"; if (!(Test-Path $output)) { New-Item -ItemType Directory -Path $output | Out-Null }; if ($ext -eq \".c\") { $arquivos = @(Get-ChildItem $pasta -Filter \"*.c\" -File | ForEach-Object { $_.FullName }); if ($arquivos.Count -eq 0) { Write-Error \"Nenhum arquivo .c encontrado.\"; exit 1 }; & \"C:\\msys64\\ucrt64\\bin\\gcc.exe\" -fdiagnostics-color=always -g $arquivos -o (Join-Path $output \"${fileBasenameNoExtension}.exe\"); if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } } elseif ($ext -eq \".cpp\") { $arquivos = @(Get-ChildItem $pasta -Filter \"*.cpp\" -File | ForEach-Object { $_.FullName }); if ($arquivos.Count -eq 0) { Write-Error \"Nenhum arquivo .cpp encontrado.\"; exit 1 }; & \"C:\\msys64\\ucrt64\\bin\\g++.exe\" -fdiagnostics-color=always -g $arquivos -o (Join-Path $output \"${fileBasenameNoExtension}.exe\"); if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } } else { Write-Error \"Abra um arquivo .c ou .cpp antes de compilar.\"; exit 1 }"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        }
+    ]
+}
