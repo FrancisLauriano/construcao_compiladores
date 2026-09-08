@@ -7,8 +7,6 @@
 #define FECHA_PAR 7
 #define FIM 8
 
-#define TAM 100
-
 extern int simbolo_lido;
 
 void obtenha_simbolo(void);
