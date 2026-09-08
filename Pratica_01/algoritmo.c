@@ -3,11 +3,9 @@
 #include <stdlib.h>
 #include "define.h"
 
-
+int posicao = 0;
 
 int tokens[] = {IDENT, MAIS, NUMERO, MULT, IDENT, FIM};
-
-posicao = 0;
 
 void obtenha_simbolo(void) {
 
@@ -35,9 +33,8 @@ void expr(void){
 
     if(simbolo_lido == MAIS){
         obtenha_simbolo();
+        expr();
     }
-
-    expr();
 }
 
 
@@ -47,9 +44,8 @@ void termo(void){
 
     if(simbolo_lido == MULT){
         obtenha_simbolo();
+        termo();
     }
-
-    termo();
 }
 
 
@@ -58,9 +54,8 @@ void fator(void){
 
     if(simbolo_lido == POTENCIA){
         obtenha_simbolo();
+        fator();
     }
-
-    fator();
 }
 
 
@@ -71,16 +66,16 @@ void primario(void){
         obtenha_simbolo();
     }else if(simbolo_lido == NUMERO){
         obtenha_simbolo();
-    }else if('('){
+    }else if(simbolo_lido == ABRE_PAR){
         obtenha_simbolo();
-        expres();
+        expr();
 
-        if(simbolo_lido != ')'){
+        if(simbolo_lido != FECHA_PAR){
             erro("Falta ')'");
         }else{
             obtenha_simbolo();
         }
     }else{
-        erro("Primario erro");
+        erro("Primario invalido");
     }
 }
