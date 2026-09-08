@@ -5,9 +5,19 @@
 
 
 
-void obtenha_simbolo(void){
+int tokens[] = {IDENT, MAIS, NUMERO, MULT, IDENT, FIM};
 
+posicao = 0;
+
+void obtenha_simbolo(void) {
+
+    simbolo_lido = tokens[posicao];
+
+    if (simbolo_lido != FIM) {
+        posicao += 1;
+    }
 }
+
 
 void erro(const char *mensagem){
     int i = 0;
