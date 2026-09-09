@@ -1,4 +1,4 @@
-# Prática de Laboratório
+# Analisador Sintático - Prática de Laboratório 01
 
 ## Objetivos
 
@@ -7,6 +7,8 @@
 - Implementar procedimentos recursivos em C.
 - Reconhecer expressões sintaticamente válidas e inválidas.
 - Identificar e tratar erros sintáticos.
+
+...
 
 ## Gramática da Prática
 
@@ -17,11 +19,7 @@ A gramática utilizada no analisador sintático é definida pelas seguintes prod
 3. `<fator> ::= <primário> ** <fator> | <primário>`
 4. `<primário> ::= IDENT | NÚMERO | ( <expr> )`
 
-## Roteiro da Atividade
-
-O roteiro completo utilizado para o desenvolvimento da prática está disponível em:
-
-[Roteiro — Analisador Sintático Descendente Recursivo](doc/Roteiro_Laboratorio_Analisador_Sintatico_Descendente_Recursivo.pdf)
+...
 
 ## Resultados dos Testes
 
@@ -186,3 +184,11 @@ Simbolo inesperado
 **Print do terminal:**
 
 ![Teste 11](doc/teste_11.png)
+
+...
+
+## Roteiro Completo da Atividade
+
+O roteiro completo utilizado para o desenvolvimento da prática está disponível em:
+
+[Roteiro — Analisador Sintático Descendente Recursivo](doc/Roteiro_Laboratorio_Analisador_Sintatico_Descendente_Recursivo.pdf)
