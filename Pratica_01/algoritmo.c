@@ -24,20 +24,20 @@ int posicao = 0;
 // // teste 6. IDENT + NUMERO * IDENT
 // int tokens[] = {IDENT, MAIS, NUMERO, MULT, IDENT, FIM};
 
-// // teste 7: sem "FIM"
-// int tokens[] = {IDENT, MAIS, NUMERO, MULT, IDENT};
-
-// teste 8: IDENT +
+// // teste 7: IDENT +
 // int tokens[] = {IDENT, MAIS, FIM};
 
-// teste 9: ( IDENT + NUMERO
+// // teste 8: ( IDENT + NUMERO
 // int tokens[] = {ABRE_PAR, IDENT, MAIS, NUMERO, FIM};
 
-// teste 10: IDENT * + NUMERO
+// // teste 9: IDENT * + NUMERO
 // int tokens[] = {IDENT, MULT, MAIS, NUMERO, FIM};
 
-// teste 11: + IDENT
-int tokens[] = {MAIS, IDENT, FIM};
+// // teste 10: + IDENT
+// int tokens[] = {MAIS, IDENT, FIM};
+
+// teste 11: sem "FIM"
+int tokens[] = {IDENT, MAIS, NUMERO, MULT, IDENT};
 
 
 void obtenha_simbolo(void) {
@@ -56,6 +56,8 @@ void erro(const char *mensagem){
         printf("%c", mensagem[i]);
     }
     printf("\n");
+
+    exit(1);
 }
 
 
